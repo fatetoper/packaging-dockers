@@ -5,7 +5,7 @@ module.exports = {
   base: "/webpack5-docs/",
   lang: "zh-CN",
   head: [["link", { rel: "icon", href: "/imgs/favicon.ico" }]],
-  title: "尚硅谷 Web 前端之 Webpack5 教程",
+  title: "Web 前端之 Webpack5 教程",
   description: "Webpack5从小白到大神",
   // 主题和它的配置
   theme: "@vuepress/theme-default",
@@ -38,7 +38,7 @@ module.exports = {
       "/intro/": [
         {
           text: "课程介绍",
-          children: ["/intro/README.md", "/intro/pre.md", "/intro/group.md", "/intro/learn.md", "/intro/asset.md"],
+          children: ["/intro/README.md", "/intro/pre.md", "/intro/group.md", "/intro/learn.md"],
         },
       ],
       "/base/": [

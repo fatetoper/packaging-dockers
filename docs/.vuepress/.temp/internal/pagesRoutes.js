@@ -1,7 +1,7 @@
 import { Vuepress } from '@vuepress/client/lib/components/Vuepress'
 
 const routeItems = [
-  ["v-8daa1a0e","/",{"title":""},["/index.html","/README.md"]],
+  ["v-8daa1a0e","/",{"title":"首页"},["/index.html","/README.md"]],
   ["v-a6cc4bba","/base/base.html",{"title":"基本使用"},["/base/base","/base/base.md"]],
   ["v-21f1ba15","/base/clean.html",{"title":"自动清空上次打包资源"},["/base/clean","/base/clean.md"]],
   ["v-e703ecdc","/base/config.html",{"title":"基本配置"},["/base/config","/base/config.md"]],

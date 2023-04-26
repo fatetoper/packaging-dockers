@@ -133,7 +133,13 @@ export const data = {
     }
   ],
   "git": {
-    "contributors": []
+    "contributors": [
+      {
+        "name": "fatetoper",
+        "email": "fan2840tao@163.com",
+        "commits": 1
+      }
+    ]
   },
   "filePathRelative": "senior/liftingSpeed.md"
 }

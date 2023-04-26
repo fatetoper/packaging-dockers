@@ -1,7 +1,7 @@
-import clientAppSetup0 from 'C:/Users/Administrator/Desktop/packaging/node_modules/@vuepress/plugin-active-header-links/lib/client/clientAppSetup.js'
-import clientAppSetup1 from 'C:/Users/Administrator/Desktop/packaging/node_modules/@vuepress/plugin-nprogress/lib/client/clientAppSetup.js'
-import clientAppSetup2 from 'C:/Users/Administrator/Desktop/packaging/node_modules/@vuepress/theme-default/lib/client/clientAppSetup.js'
-import clientAppSetup3 from 'C:/Users/Administrator/Desktop/packaging/node_modules/vuepress-plugin-copy-code2/lib/client/appSetup.js'
+import clientAppSetup0 from 'F:/code/packaging-dockers/node_modules/@vuepress/plugin-active-header-links/lib/client/clientAppSetup.js'
+import clientAppSetup1 from 'F:/code/packaging-dockers/node_modules/@vuepress/plugin-nprogress/lib/client/clientAppSetup.js'
+import clientAppSetup2 from 'F:/code/packaging-dockers/node_modules/@vuepress/theme-default/lib/client/clientAppSetup.js'
+import clientAppSetup3 from 'F:/code/packaging-dockers/node_modules/vuepress-plugin-copy-code2/lib/client/appSetup.js'
 
 export const clientAppSetups = [
   clientAppSetup0,
