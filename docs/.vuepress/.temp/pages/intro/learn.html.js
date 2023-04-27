@@ -11,7 +11,7 @@ export const data = {
       {
         "name": "fatetoper",
         "email": "fan2840tao@163.com",
-        "commits": 2
+        "commits": 3
       }
     ]
   },

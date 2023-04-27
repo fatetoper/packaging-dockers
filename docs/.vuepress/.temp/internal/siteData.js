@@ -8,7 +8,7 @@ export const siteData = {
       "link",
       {
         "rel": "icon",
-        "href": "/imgs/favicon.ico"
+        "href": "/imgs/logo.png"
       }
     ]
   ],

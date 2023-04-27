@@ -1,5 +1,5 @@
 export const themeData = {
-  "logo": "/imgs/favicon.ico",
+  "logo": "/imgs/logo.png",
   "lastUpdated": false,
   "navbar": [
     {

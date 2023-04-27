@@ -4,13 +4,13 @@ module.exports = {
   // 站点配置
   base: "/webpack5-docs/",
   lang: "zh-CN",
-  head: [["link", { rel: "icon", href: "/imgs/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/imgs/logo.png" }]],
   title: "Web 前端之 Webpack5 教程",
   description: "Webpack5从小白到大神",
   // 主题和它的配置
   theme: "@vuepress/theme-default",
   themeConfig: {
-    logo: "/imgs/favicon.ico",
+    logo: "/imgs/logo.png",
     lastUpdated: false,
     navbar: [
       {
