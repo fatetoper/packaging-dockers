@@ -1,34 +1,28 @@
 export const data = {
-  "key": "v-10b408dc",
-  "path": "/intro/pre.html",
-  "title": "学习条件",
+  "key": "v-bce51d94",
+  "path": "/base/why.html",
+  "title": "前言",
   "lang": "zh-CN",
   "frontmatter": {},
   "excerpt": "",
   "headers": [
     {
       "level": 2,
-      "title": "前置知识",
-      "slug": "前置知识",
+      "title": "为什么需要打包工具？",
+      "slug": "为什么需要打包工具",
       "children": []
     },
     {
       "level": 2,
-      "title": "依赖环境",
-      "slug": "依赖环境",
+      "title": "有哪些打包工具？",
+      "slug": "有哪些打包工具",
       "children": []
     }
   ],
   "git": {
-    "contributors": [
-      {
-        "name": "fatetoper",
-        "email": "fan2840tao@163.com",
-        "commits": 1
-      }
-    ]
+    "contributors": []
   },
-  "filePathRelative": "intro/pre.md"
+  "filePathRelative": "base/why.md"
 }
 
 if (import.meta.webpackHot) {

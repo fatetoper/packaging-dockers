@@ -7,7 +7,7 @@ export const themeData = {
       "link": "/intro/"
     },
     {
-      "text": "基础",
+      "text": "webpack基础",
       "link": "/base/"
     },
     {
@@ -29,17 +29,18 @@ export const themeData = {
         "text": "课程介绍",
         "children": [
           "/intro/README.md",
+          // "/intro/why.md",
           "/intro/pre.md",
-          "/intro/group.md",
+          // "/intro/group.md",
           "/intro/learn.md"
         ]
       }
     ],
     "/base/": [
       {
-        "text": "基础配置",
+        "text": "webpack基础",
         "children": [
-          "/base/README.md",
+          // "/base/README.md",
           "/base/base.md",
           "/base/config.md",
           "/base/development.md",

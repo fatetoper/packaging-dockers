@@ -18,7 +18,7 @@ module.exports = {
         link: "/intro/",
       },
       {
-        text: "基础",
+        text: "webpack基础",
         link: "/base/",
       },
       {

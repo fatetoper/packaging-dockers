@@ -29,16 +29,10 @@ export const pagesData = {
   "v-5a4f3333": () => import(/* webpackChunkName: "v-5a4f3333" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/base/output.html.js").then(({ data }) => data),
   // path: /base/production.html
   "v-6940ce0a": () => import(/* webpackChunkName: "v-6940ce0a" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/base/production.html.js").then(({ data }) => data),
-  // path: /base/
-  "v-1455d425": () => import(/* webpackChunkName: "v-1455d425" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/base/index.html.js").then(({ data }) => data),
   // path: /base/server.html
   "v-5e3bb631": () => import(/* webpackChunkName: "v-5e3bb631" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/base/server.html.js").then(({ data }) => data),
   // path: /base/summary.html
   "v-ce2194d0": () => import(/* webpackChunkName: "v-ce2194d0" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/base/summary.html.js").then(({ data }) => data),
-  // path: /intro/asset.html
-  "v-0670fc65": () => import(/* webpackChunkName: "v-0670fc65" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/intro/asset.html.js").then(({ data }) => data),
-  // path: /intro/group.html
-  "v-581e5b94": () => import(/* webpackChunkName: "v-581e5b94" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/intro/group.html.js").then(({ data }) => data),
   // path: /intro/learn.html
   "v-7d0ce4de": () => import(/* webpackChunkName: "v-7d0ce4de" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/intro/learn.html.js").then(({ data }) => data),
   // path: /intro/pre.html
@@ -75,4 +69,8 @@ export const pagesData = {
   "v-1d695a4e": () => import(/* webpackChunkName: "v-1d695a4e" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/senior/summary.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
+  // path: /intro/why.html
+  "v-401e5ce6": () => import(/* webpackChunkName: "v-401e5ce6" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/intro/why.html.js").then(({ data }) => data),
+  // path: /intro/group.html
+  "v-581e5b94": () => import(/* webpackChunkName: "v-581e5b94" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/intro/group.html.js").then(({ data }) => data),
 }

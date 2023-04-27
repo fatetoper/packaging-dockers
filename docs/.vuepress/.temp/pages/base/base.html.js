@@ -1,38 +1,26 @@
 export const data = {
   "key": "v-a6cc4bba",
   "path": "/base/base.html",
-  "title": "基本使用",
+  "title": "webpack基础",
   "lang": "zh-CN",
   "frontmatter": {},
   "excerpt": "",
   "headers": [
     {
       "level": 2,
-      "title": "功能介绍",
-      "slug": "功能介绍",
-      "children": []
-    },
-    {
-      "level": 2,
-      "title": "开始使用",
-      "slug": "开始使用",
+      "title": "基本使用",
+      "slug": "基本使用",
       "children": [
         {
           "level": 3,
-          "title": "1. 资源目录",
-          "slug": "_1-资源目录",
+          "title": "功能介绍",
+          "slug": "功能介绍",
           "children": []
         },
         {
           "level": 3,
-          "title": "2. 创建文件",
-          "slug": "_2-创建文件",
-          "children": []
-        },
-        {
-          "level": 3,
-          "title": "3. 下载依赖",
-          "slug": "_3-下载依赖",
+          "title": "开始使用",
+          "slug": "开始使用",
           "children": []
         },
         {

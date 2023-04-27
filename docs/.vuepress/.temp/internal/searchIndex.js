@@ -7,8 +7,20 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "基本使用",
+    "title": "前言",
     "headers": [
+      {
+        "level": 2,
+        "title": "为什么需要打包工具？",
+        "slug": "为什么需要打包工具",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "有哪些打包工具？",
+        "slug": "有哪些打包工具",
+        "children": []
+      },
       {
         "level": 2,
         "title": "功能介绍",
