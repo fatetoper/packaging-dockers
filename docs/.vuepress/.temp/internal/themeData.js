@@ -29,27 +29,16 @@ export const themeData = {
         "text": "课程介绍",
         "children": [
           "/intro/README.md",
-          // "/intro/why.md",
           "/intro/pre.md",
-          // "/intro/group.md",
           "/intro/learn.md"
         ]
       }
     ],
     "/base/": [
       {
-        "text": "webpack基础",
+        "text": "基础配置",
         "children": [
-          // "/base/README.md",
-          "/base/base.md",
-          "/base/config.md",
-          "/base/development.md",
-          "/base/css.md",
-          "/base/image.md",
-          "/base/output.md",
-          "/base/clean.md",
-          "/base/font.md",
-          "/base/other.md",
+          "/base/README.md",
           "/base/javascript.md",
           "/base/html.md",
           "/base/server.md",

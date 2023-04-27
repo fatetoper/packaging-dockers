@@ -2,7 +2,6 @@ import { Vuepress } from '@vuepress/client/lib/components/Vuepress'
 
 const routeItems = [
   ["v-8daa1a0e","/",{"title":"首页"},["/index.html","/README.md"]],
-  ["v-a6cc4bba","/base/base.html",{"title":"webpack基础"},["/base/base","/base/base.md"]],
   ["v-21f1ba15","/base/clean.html",{"title":"自动清空上次打包资源"},["/base/clean","/base/clean.md"]],
   ["v-e703ecdc","/base/config.html",{"title":"基本配置"},["/base/config","/base/config.md"]],
   ["v-80c5304a","/base/css.html",{"title":"处理样式资源"},["/base/css","/base/css.md"]],
@@ -16,11 +15,14 @@ const routeItems = [
   ["v-499655ae","/base/other.html",{"title":"处理其他资源"},["/base/other","/base/other.md"]],
   ["v-5a4f3333","/base/output.html",{"title":"修改输出资源的名称和路径"},["/base/output","/base/output.md"]],
   ["v-6940ce0a","/base/production.html",{"title":"生产模式介绍"},["/base/production","/base/production.md"]],
+  ["v-1455d425","/base/",{"title":"webpack基础"},["/base/index.html","/base/README.md"]],
   ["v-5e3bb631","/base/server.html",{"title":"开发服务器&自动化"},["/base/server","/base/server.md"]],
   ["v-ce2194d0","/base/summary.html",{"title":"总结"},["/base/summary","/base/summary.md"]],
+  ["v-581e5b94","/intro/group.html",{"title":"适合群体"},["/intro/group","/intro/group.md"]],
   ["v-7d0ce4de","/intro/learn.html",{"title":"我能学到什么"},["/intro/learn","/intro/learn.md"]],
   ["v-10b408dc","/intro/pre.html",{"title":"学习条件"},["/intro/pre","/intro/pre.md"]],
   ["v-f9e30908","/intro/",{"title":"前言"},["/intro/index.html","/intro/README.md"]],
+  ["v-401e5ce6","/intro/why.html",{"title":"前言"},["/intro/why","/intro/why.md"]],
   ["v-1cfd2df6","/origin/loader.html",{"title":"Loader 原理"},["/origin/loader","/origin/loader.md"]],
   ["v-2d7562d6","/origin/plugin.html",{"title":"Plugin 原理"},["/origin/plugin","/origin/plugin.md"]],
   ["v-2259a8b0","/origin/",{"title":"介绍"},["/origin/index.html","/origin/README.md"]],
@@ -36,8 +38,6 @@ const routeItems = [
   ["v-5460e2da","/senior/reduceVolume.html",{"title":"减少代码体积"},["/senior/reduceVolume","/senior/reduceVolume.md"]],
   ["v-1d695a4e","/senior/summary.html",{"title":"总结"},["/senior/summary","/senior/summary.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
-  ["v-401e5ce6","/intro/why.html",{"title":"前言"},["/intro/why","/intro/why.md"]],
-  ["v-581e5b94","/intro/group.html",{"title":"适合群体"},["/intro/group","/intro/group.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(

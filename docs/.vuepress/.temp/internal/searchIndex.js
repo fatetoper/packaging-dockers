@@ -7,75 +7,6 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "前言",
-    "headers": [
-      {
-        "level": 2,
-        "title": "为什么需要打包工具？",
-        "slug": "为什么需要打包工具",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "有哪些打包工具？",
-        "slug": "有哪些打包工具",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "功能介绍",
-        "slug": "功能介绍",
-        "children": []
-      },
-      {
-        "level": 2,
-        "title": "开始使用",
-        "slug": "开始使用",
-        "children": [
-          {
-            "level": 3,
-            "title": "1. 资源目录",
-            "slug": "_1-资源目录",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "2. 创建文件",
-            "slug": "_2-创建文件",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "3. 下载依赖",
-            "slug": "_3-下载依赖",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "4. 启用 Webpack",
-            "slug": "_4-启用-webpack",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "5. 观察输出文件",
-            "slug": "_5-观察输出文件",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "小结",
-        "slug": "小结",
-        "children": []
-      }
-    ],
-    "path": "/base/base.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "自动清空上次打包资源",
     "headers": [
       {
@@ -656,19 +587,255 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "前言",
+    "title": "webpack基础",
     "headers": [
       {
         "level": 2,
-        "title": "为什么需要打包工具？",
-        "slug": "为什么需要打包工具",
+        "title": "基本使用",
+        "slug": "基本使用",
+        "children": [
+          {
+            "level": 3,
+            "title": "功能介绍",
+            "slug": "功能介绍",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "开始使用",
+            "slug": "开始使用",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "4. 启用 Webpack",
+            "slug": "_4-启用-webpack",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "5. 观察输出文件",
+            "slug": "_5-观察输出文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "小结",
+            "slug": "小结",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "基本配置",
+        "slug": "基本配置",
+        "children": [
+          {
+            "level": 3,
+            "title": "5 大核心概念",
+            "slug": "_5-大核心概念",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "准备 Webpack 配置文件",
+            "slug": "准备-webpack-配置文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "修改配置文件",
+            "slug": "修改配置文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "小结",
+            "slug": "小结-1",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "开发模式介绍",
+        "slug": "开发模式介绍",
         "children": []
       },
       {
         "level": 2,
-        "title": "有哪些打包工具？",
-        "slug": "有哪些打包工具",
-        "children": []
+        "title": "处理样式资源",
+        "slug": "处理样式资源",
+        "children": [
+          {
+            "level": 3,
+            "title": "介绍",
+            "slug": "介绍",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "处理 Css 资源",
+            "slug": "处理-css-资源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "处理 Less 资源",
+            "slug": "处理-less-资源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "处理 Sass 和 Scss 资源",
+            "slug": "处理-sass-和-scss-资源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "处理 Styl 资源",
+            "slug": "处理-styl-资源",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "处理图片资源",
+        "slug": "处理图片资源",
+        "children": [
+          {
+            "level": 3,
+            "title": "1. 配置",
+            "slug": "_1-配置",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "2. 添加图片资源",
+            "slug": "_2-添加图片资源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "3. 使用图片资源",
+            "slug": "_3-使用图片资源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "4. 运行指令",
+            "slug": "_4-运行指令",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "5. 输出资源情况",
+            "slug": "_5-输出资源情况",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "6. 对图片资源进行优化",
+            "slug": "_6-对图片资源进行优化",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "修改输出资源的名称和路径",
+        "slug": "修改输出资源的名称和路径",
+        "children": [
+          {
+            "level": 3,
+            "title": "1. 配置",
+            "slug": "_1-配置-1",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "2. 修改 index.html",
+            "slug": "_2-修改-index-html",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "3. 运行指令",
+            "slug": "_3-运行指令",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "自动清空上次打包资源",
+        "slug": "自动清空上次打包资源",
+        "children": [
+          {
+            "level": 3,
+            "title": "1. 配置",
+            "slug": "_1-配置-2",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "2. 运行指令",
+            "slug": "_2-运行指令",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "处理字体图标资源",
+        "slug": "处理字体图标资源",
+        "children": [
+          {
+            "level": 3,
+            "title": "1. 下载字体图标文件",
+            "slug": "_1-下载字体图标文件",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "2. 添加字体图标资源",
+            "slug": "_2-添加字体图标资源",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "3. 配置",
+            "slug": "_3-配置-4",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "4. 运行指令",
+            "slug": "_4-运行指令-1",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "处理其他资源",
+        "slug": "处理其他资源",
+        "children": [
+          {
+            "level": 3,
+            "title": "1. 配置",
+            "slug": "_1-配置-3",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "2. 运行指令",
+            "slug": "_2-运行指令-1",
+            "children": []
+          }
+        ]
       }
     ],
     "path": "/base/",
@@ -709,13 +876,6 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "学习资料",
-    "headers": [],
-    "path": "/intro/asset.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
     "title": "适合群体",
     "headers": [],
     "path": "/intro/group.html",
@@ -730,16 +890,62 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "前置知识",
-    "headers": [],
+    "title": "学习条件",
+    "headers": [
+      {
+        "level": 2,
+        "title": "前置知识",
+        "slug": "前置知识",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "依赖环境",
+        "slug": "依赖环境",
+        "children": []
+      }
+    ],
     "path": "/intro/pre.html",
     "pathLocale": "/",
     "extraFields": []
   },
   {
-    "title": "依赖环境",
-    "headers": [],
+    "title": "前言",
+    "headers": [
+      {
+        "level": 2,
+        "title": "为什么需要打包工具？",
+        "slug": "为什么需要打包工具",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "有哪些打包工具？",
+        "slug": "有哪些打包工具",
+        "children": []
+      }
+    ],
     "path": "/intro/",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "前言",
+    "headers": [
+      {
+        "level": 2,
+        "title": "为什么需要打包工具？",
+        "slug": "为什么需要打包工具",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "有哪些打包工具？",
+        "slug": "有哪些打包工具",
+        "children": []
+      }
+    ],
+    "path": "/intro/why.html",
     "pathLocale": "/",
     "extraFields": []
   },
