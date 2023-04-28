@@ -1355,6 +1355,12 @@ export const searchIndex = [
       },
       {
         "level": 2,
+        "title": "vite自带功能",
+        "slug": "vite自带功能",
+        "children": []
+      },
+      {
+        "level": 2,
         "title": "基本配置",
         "slug": "基本配置",
         "children": [

@@ -6,7 +6,7 @@ module.exports = {
   lang: "zh-CN",
   head: [["link", { rel: "icon", href: "/imgs/logo.png" }]],
   title: "webpack & vite 教程",
-  description: "Webpack5从小白到大神",
+  description: "Webpack5 vite 从小白到大神",
   // 主题和它的配置
   theme: "@vuepress/theme-default",
   themeConfig: {
