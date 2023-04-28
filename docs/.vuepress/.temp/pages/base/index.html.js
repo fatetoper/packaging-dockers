@@ -25,18 +25,6 @@ export const data = {
         },
         {
           "level": 3,
-          "title": "4. 启用 Webpack",
-          "slug": "_4-启用-webpack",
-          "children": []
-        },
-        {
-          "level": 3,
-          "title": "5. 观察输出文件",
-          "slug": "_5-观察输出文件",
-          "children": []
-        },
-        {
-          "level": 3,
           "title": "小结",
           "slug": "小结",
           "children": []
@@ -253,6 +241,131 @@ export const data = {
           "children": []
         }
       ]
+    },
+    {
+      "level": 2,
+      "title": "处理 js 资源",
+      "slug": "处理-js-资源",
+      "children": [
+        {
+          "level": 3,
+          "title": "Eslint",
+          "slug": "eslint",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "Babel",
+          "slug": "babel",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "处理 Html 资源",
+      "slug": "处理-html-资源",
+      "children": [
+        {
+          "level": 3,
+          "title": "1. 下载包",
+          "slug": "_1-下载包-4",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "2. 配置",
+          "slug": "_2-配置",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "3. 修改 index.html",
+          "slug": "_3-修改-index-html",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "4. 运行指令",
+          "slug": "_4-运行指令-2",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "开发服务器&自动化",
+      "slug": "开发服务器-自动化",
+      "children": [
+        {
+          "level": 3,
+          "title": "1. 下载包",
+          "slug": "_1-下载包-5",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "2. 配置",
+          "slug": "_2-配置-1",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "3. 运行指令",
+          "slug": "_3-运行指令-1",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "生产模式介绍",
+      "slug": "生产模式介绍",
+      "children": [
+        {
+          "level": 3,
+          "title": "生产模式准备",
+          "slug": "生产模式准备",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "Css 处理",
+      "slug": "css-处理",
+      "children": [
+        {
+          "level": 3,
+          "title": "提取 Css 成单独文件",
+          "slug": "提取-css-成单独文件",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "Css 兼容性处理",
+          "slug": "css-兼容性处理",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "Css 压缩",
+          "slug": "css-压缩",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "html 压缩",
+      "slug": "html-压缩",
+      "children": []
+    },
+    {
+      "level": 2,
+      "title": "总结",
+      "slug": "总结",
+      "children": []
     }
   ],
   "git": {

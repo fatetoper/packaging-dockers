@@ -18,12 +18,12 @@ module.exports = {
         link: "/intro/",
       },
       {
-        text: "webpack基础",
+        text: "webpack",
         link: "/base/",
       },
       {
-        text: "高级",
-        link: "/senior/",
+        text: "vite",
+        link: "/vite/",
       },
       {
         text: "项目",
@@ -46,9 +46,10 @@ module.exports = {
       ],
       "/base/": [
         {
-          text: "基础配置",
+          text: "webpack",
           children: [
             "/base/README.md",
+            "/base/senior.md"
             // "/base/base.md",
             // "/base/config.md",
             // "/base/development.md",
@@ -58,20 +59,22 @@ module.exports = {
             // "/base/clean.md",
             // "/base/font.md",
             // "/base/other.md",
-            "/base/javascript.md",
-            "/base/html.md",
-            "/base/server.md",
-            "/base/production.md",
-            "/base/optimizeCss.md",
-            "/base/minifyHtml.md",
-            "/base/summary.md",
+            // "/base/javascript.md",
+            // "/base/html.md",
+            // "/base/server.md",
+            // "/base/production.md",
+            // "/base/optimizeCss.md",
+            // "/base/minifyHtml.md",
+            // "/base/summary.md",
           ],
         },
       ],
-      "/senior/": [
+      "/vite/": [
         {
-          text: "高级优化",
-          children: ["/senior/README.md", "/senior/enhanceExperience.md", "/senior/liftingSpeed.md", "/senior/reduceVolume.md", "/senior/optimizePerformance.md", "/senior/summary.md"],
+          text: "vite",
+          children: [
+            "/vite/README.md", 
+          ],
         },
       ],
       "/project/": [

@@ -7,12 +7,12 @@ export const themeData = {
       "link": "/intro/"
     },
     {
-      "text": "webpack基础",
+      "text": "webpack",
       "link": "/base/"
     },
     {
-      "text": "高级",
-      "link": "/senior/"
+      "text": "vite",
+      "link": "/vite/"
     },
     {
       "text": "项目",
@@ -36,29 +36,18 @@ export const themeData = {
     ],
     "/base/": [
       {
-        "text": "基础配置",
+        "text": "webpack",
         "children": [
           "/base/README.md",
-          "/base/javascript.md",
-          "/base/html.md",
-          "/base/server.md",
-          "/base/production.md",
-          "/base/optimizeCss.md",
-          "/base/minifyHtml.md",
-          "/base/summary.md"
+          "/base/senior.md"
         ]
       }
     ],
-    "/senior/": [
+    "/vite/": [
       {
-        "text": "高级优化",
+        "text": "vite",
         "children": [
-          "/senior/README.md",
-          "/senior/enhanceExperience.md",
-          "/senior/liftingSpeed.md",
-          "/senior/reduceVolume.md",
-          "/senior/optimizePerformance.md",
-          "/senior/summary.md"
+          "/vite/README.md"
         ]
       }
     ],
