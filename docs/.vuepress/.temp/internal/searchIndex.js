@@ -1301,398 +1301,73 @@ export const searchIndex = [
     "extraFields": []
   },
   {
-    "title": "提升开发体验",
+    "title": "vite",
     "headers": [
       {
         "level": 2,
-        "title": "SourceMap",
-        "slug": "sourcemap",
+        "title": "为什么会有vite",
+        "slug": "为什么会有vite",
         "children": [
           {
             "level": 3,
-            "title": "为什么",
-            "slug": "为什么",
+            "title": "现实问题",
+            "slug": "现实问题",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "功能介绍",
+        "slug": "功能介绍",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "开始使用",
+        "slug": "开始使用",
+        "children": [
+          {
+            "level": 3,
+            "title": "1. 创建vite项目",
+            "slug": "_1-创建vite项目",
             "children": []
           },
           {
             "level": 3,
-            "title": "是什么",
-            "slug": "是什么",
+            "title": "2. 资源目录",
+            "slug": "_2-资源目录",
             "children": []
           },
           {
             "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用",
+            "title": "3.指定替代根目录",
+            "slug": "_3-指定替代根目录",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "4.命令行界面",
+            "slug": "_4-命令行界面",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "基本配置",
+        "slug": "基本配置",
+        "children": [
+          {
+            "level": 3,
+            "title": "四大核心概念",
+            "slug": "四大核心概念",
             "children": []
           }
         ]
       }
     ],
-    "path": "/vite/enhanceExperience.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "提升打包构建速度",
-    "headers": [
-      {
-        "level": 2,
-        "title": "HotModuleReplacement",
-        "slug": "hotmodulereplacement",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "OneOf",
-        "slug": "oneof",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-1",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-1",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-1",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Include/Exclude",
-        "slug": "include-exclude",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-2",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-2",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-2",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Cache",
-        "slug": "cache",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-3",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-3",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-3",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Thead",
-        "slug": "thead",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-4",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-4",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-4",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/vite/liftingSpeed.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "优化代码运行性能",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Code Split",
-        "slug": "code-split",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Preload / Prefetch",
-        "slug": "preload-prefetch",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-1",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-1",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-1",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Network Cache",
-        "slug": "network-cache",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-2",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-2",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-2",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Core-js",
-        "slug": "core-js",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-3",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-3",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-3",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "PWA",
-        "slug": "pwa",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-4",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-4",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-4",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/vite/optimizePerformance.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "介绍",
-    "headers": [],
     "path": "/vite/",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "减少代码体积",
-    "headers": [
-      {
-        "level": 2,
-        "title": "Tree Shaking",
-        "slug": "tree-shaking",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Babel",
-        "slug": "babel",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-1",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-1",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-1",
-            "children": []
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "title": "Image Minimizer",
-        "slug": "image-minimizer",
-        "children": [
-          {
-            "level": 3,
-            "title": "为什么",
-            "slug": "为什么-2",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "是什么",
-            "slug": "是什么-2",
-            "children": []
-          },
-          {
-            "level": 3,
-            "title": "怎么用",
-            "slug": "怎么用-2",
-            "children": []
-          }
-        ]
-      }
-    ],
-    "path": "/vite/reduceVolume.html",
-    "pathLocale": "/",
-    "extraFields": []
-  },
-  {
-    "title": "总结",
-    "headers": [],
-    "path": "/vite/summary.html",
     "pathLocale": "/",
     "extraFields": []
   },
