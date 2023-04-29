@@ -13,5 +13,9 @@
     "start": "vuepress dev docs",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vuepress-plugin-anchor-right": "0.0.1-beta.3",
+    "vuepress-plugin-right-anchor": "^2.1.0-rc.2"
   }
 }

@@ -28,7 +28,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "intro/pre.md"
+  "filePathRelative": "intro/pre.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

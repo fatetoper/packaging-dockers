@@ -15,7 +15,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "project/README.md"
+  "filePathRelative": "project/README.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

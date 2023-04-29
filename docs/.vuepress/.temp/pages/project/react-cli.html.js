@@ -46,7 +46,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "project/react-cli.md"
+  "filePathRelative": "project/react-cli.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

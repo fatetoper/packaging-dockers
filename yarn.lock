@@ -1495,6 +1495,11 @@ vue@^3.2.31:
     "@vue/server-renderer" "3.2.33"
     "@vue/shared" "3.2.33"
 
+vuepress-plugin-anchor-right@0.0.1-beta.3:
+  version "0.0.1-beta.3"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-anchor-right/-/vuepress-plugin-anchor-right-0.0.1-beta.3.tgz#580b01861321ada012cfd5d36e475b66290cd126"
+  integrity sha512-Aj/PjTzvUxn2dAysKDGV9lCs3klD8BQC1BTzpdFI0S9mVQijKRFG1eY/CXGCwhMirKx2W9yNsF3F2MFN5/tKdA==
+
 vuepress-plugin-copy-code2@2.0.0-beta.38:
   version "2.0.0-beta.38"
   resolved "https://registry.npmmirror.com/vuepress-plugin-copy-code2/-/vuepress-plugin-copy-code2-2.0.0-beta.38.tgz#d5eb3486f58ad37e9f09179605ea2565bcf467c4"
@@ -1507,6 +1512,11 @@ vuepress-plugin-copy-code2@2.0.0-beta.38:
     vue "^3.2.31"
     vue-router "^4.0.14"
     vuepress-plugin-sass-palette "2.0.0-beta.38"
+
+vuepress-plugin-right-anchor@^2.1.0-rc.2:
+  version "2.1.0-rc.2"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-right-anchor/-/vuepress-plugin-right-anchor-2.1.0-rc.2.tgz#a14e991c597a4968bfb4a6e91b5c5b2d558e4e0a"
+  integrity sha512-gQig9lm+/i0S/k3XyS/S/18huO9MDosrNeEQyZ5CJXPQ7DbbNKba6mADd2OOW1WLIDNmd0lzIiye0sPx2Hu+LQ==
 
 vuepress-plugin-sass-palette@2.0.0-beta.38:
   version "2.0.0-beta.38"

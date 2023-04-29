@@ -1,6 +1,9 @@
+
 const { copyCode } = require("vuepress-plugin-copy-code2");
+// const vuepressPluginAnchorRight  = require("vuepress-plugin-anchor-right");
 
 module.exports = {
+
   // 站点配置
   base: "/webpack5-docs/",
   lang: "zh-CN",
@@ -97,6 +100,22 @@ module.exports = {
       // 插件选项
       pure: true,
     }),
+    [
+      'vuepress-plugin-right-anchor',
+      {
+        showDepth: 1,
+        ignore: [
+          '/',
+          // '/api/'
+          // 更多...
+        ],
+        expand: {
+          trigger: 'hover',
+          clickModeDefaultOpen: true
+        },
+        customClass: 'your-customClass',
+      }
+  ],
     [
       "@vuepress/plugin-external-link-icon",
       {

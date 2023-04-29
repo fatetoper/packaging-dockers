@@ -23,7 +23,7 @@ const routeItems = [
   ["v-3fe9ea34","/senior/",{"title":"介绍"},["/senior/index.html","/senior/README.md"]],
   ["v-5460e2da","/senior/reduceVolume.html",{"title":"减少代码体积"},["/senior/reduceVolume","/senior/reduceVolume.md"]],
   ["v-1d695a4e","/senior/summary.html",{"title":"总结"},["/senior/summary","/senior/summary.md"]],
-  ["v-157350f2","/vite/",{"title":"vite"},["/vite/index.html","/vite/README.md"]],
+  ["v-157350f2","/vite/",{"title":"基础"},["/vite/index.html","/vite/README.md"]],
   ["v-8c4c0dd0","/base/backup/clean.html",{"title":"自动清空上次打包资源"},["/base/backup/clean","/base/backup/clean.md"]],
   ["v-1cc4aa22","/base/backup/config.html",{"title":"基本配置"},["/base/backup/config","/base/backup/config.md"]],
   ["v-7100e8c4","/base/backup/css.html",{"title":"处理样式资源"},["/base/backup/css","/base/backup/css.md"]],

@@ -46,7 +46,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "project/vue-cli.md"
+  "filePathRelative": "project/vue-cli.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

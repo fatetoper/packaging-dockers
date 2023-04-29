@@ -47,7 +47,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "base/backup/production.md"
+  "filePathRelative": "base/backup/production.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

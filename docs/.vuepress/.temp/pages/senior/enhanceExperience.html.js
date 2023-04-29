@@ -41,7 +41,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "senior/enhanceExperience.md"
+  "filePathRelative": "senior/enhanceExperience.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

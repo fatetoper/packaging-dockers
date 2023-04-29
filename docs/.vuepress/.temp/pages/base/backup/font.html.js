@@ -40,7 +40,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "base/backup/font.md"
+  "filePathRelative": "base/backup/font.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

@@ -121,7 +121,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "origin/plugin.md"
+  "filePathRelative": "origin/plugin.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

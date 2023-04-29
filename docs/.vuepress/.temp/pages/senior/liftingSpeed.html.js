@@ -141,7 +141,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "senior/liftingSpeed.md"
+  "filePathRelative": "senior/liftingSpeed.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

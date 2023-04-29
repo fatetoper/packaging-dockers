@@ -15,7 +15,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "senior/summary.md"
+  "filePathRelative": "senior/summary.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {

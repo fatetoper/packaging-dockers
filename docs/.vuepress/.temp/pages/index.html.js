@@ -42,11 +42,23 @@ export const data = {
       {
         "name": "fatetoper",
         "email": "fan2840tao@163.com",
-        "commits": 2
+        "commits": 3
       }
     ]
   },
-  "filePathRelative": "README.md"
+  "filePathRelative": "README.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": true
+  }
 }
 
 if (import.meta.webpackHot) {

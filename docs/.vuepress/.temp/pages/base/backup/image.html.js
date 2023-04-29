@@ -52,7 +52,19 @@ export const data = {
       }
     ]
   },
-  "filePathRelative": "base/backup/image.md"
+  "filePathRelative": "base/backup/image.md",
+  "rightAnchor": {
+    "showDepth": 1,
+    "ignore": [
+      "/"
+    ],
+    "expand": {
+      "trigger": "hover",
+      "clickModeDefaultOpen": true
+    },
+    "customClass": "your-customClass",
+    "isIgnore": false
+  }
 }
 
 if (import.meta.webpackHot) {
