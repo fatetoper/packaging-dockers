@@ -304,5 +304,55 @@ import.meta.env.MODE的值分别为 <code>development</code> 和 <code>productio
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Using data from %VITE_API_URL%<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>如果环境变量在 import.meta.env 中不存在，比如不存在的 %NON_EXISTENT%，则会将被忽略而不被替换，这与 JS 中的 import.meta.env.NON_EXISTENT 不同，JS 中会被替换为 undefined。</p>
 <h2 id="构建生产版本" tabindex="-1"><a class="header-anchor" href="#构建生产版本" aria-hidden="true">#</a> 构建生产版本</h2>
+<p>当需要将应用部署到生产环境时，只需运行 vite build 命令。默认情况下，它使用 <code>&lt;root&gt;/index.html</code> 作为其构建入口点，并生成能够静态部署的应用程序包。</p>
+<h3 id="浏览器兼容性" tabindex="-1"><a class="header-anchor" href="#浏览器兼容性" aria-hidden="true">#</a> 浏览器兼容性</h3>
+<p><strong>vite需求的浏览器环境相对较新，因此存在潜在的兼容问题的。</strong><br>
+默认情况下，Vite 的目标是能够 支持 <code>原生 ESM script 标签</code>、支持 <code>原生 ESM 动态导入</code> 和 <code>import.meta</code> 的浏览器：</p>
+<ul>
+<li><code>Chrome &gt;=87 (2020年底发布)</code></li>
+<li><code>Firefox &gt;=78 (2020年中发布)</code></li>
+<li><code>Safari &gt;=14 (2020年下半年发布)</code></li>
+<li><code>Edge &gt;=88 (2021年初发布)</code></li>
+</ul>
+<p>你也可以通过 <a href="https://cn.vitejs.dev/config/build-options.html#build-target" target="_blank" rel="noopener noreferrer"><code>build.target</code> 配置项<ExternalLinkIcon/></a> 指定构建目标，最低支持 <code>es2015</code>。</p>
+<p>传统浏览器可以通过插件 <code>@vitejs/plugin-legacy</code> 来支持，它将自动生成传统版本的 chunk 及与其相对应 ES 语言特性方面的 polyfill。兼容版的 chunk 只会在不支持原生 ESM 的浏览器中进行按需加载。</p>
+<p>默认情况下 Vite 只处理语法转译，且 默认不包含任何 polyfill。 要用 polyfill 需要在 plugin-legacy 插件中进行配置。</p>
+<h3 id="公共基础路径" tabindex="-1"><a class="header-anchor" href="#公共基础路径" aria-hidden="true">#</a> 公共基础路径</h3>
+<p>如果部署项目时需要指定具体的公共路径，只需指定 base 配置项，然后所有资源的路径都将据此配置重写。<br>
+这个选项也可以通过命令行参数指定，例如 vite build --base=/my/public/path/。</p>
+<h3 id="多页面应用模式" tabindex="-1"><a class="header-anchor" href="#多页面应用模式" aria-hidden="true">#</a> 多页面应用模式</h3>
+<p>假设你有下面这样的项目文件结构</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>├── package.json
+├── vite.config.js
+├── index.html
+├── main.js
+└── nested
+    ├── index.html
+    └── nested.js
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>在开发过程中，简单地导航或链接到 /nested/ - 将会按预期工作，与正常的静态文件服务器表现一致。</p>
+<p>在构建过程中，你只需指定多个 .html 文件作为入口点即可：</p>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">// vite.config.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> resolve <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'path'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">build</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rollupOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">main</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'index.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">nested</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'nested/index.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>如果你指定了另一个根目录，请记住，在解析输入路径时，__dirname 的值将仍然是 vite.config.js 文件所在的目录。因此，你需要把对应入口文件的 root 的路径添加到 resolve 的参数中。</p>
+<h3 id="产物分块策略" tabindex="-1"><a class="header-anchor" href="#产物分块策略" aria-hidden="true">#</a> 产物分块策略</h3>
+<p>你可以通过配置 build.rollupOptions.output.manualChunks 来自定义 chunk 分割策略（查看 Rollup 相应文档）。在 Vite 2.8 及更早版本中，默认的策略是将 chunk 分割为 index 和 vendor。这对一些 SPA 来说是好的策略，但是要对所有应用场景提供一种通用解决方案是非常困难的。从 Vite 2.9 起，manualChunks 默认情况下不再被更改。你可以通过在配置文件中添加 splitVendorChunkPlugin 来继续使用 “分割 Vendor Chunk” 策略：</p>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">// vite.config.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> splitVendorChunkPlugin <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">splitVendorChunkPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>也可以用一个工厂函数 splitVendorChunk({ cache: SplitVendorChunkCache }) 来提供该策略，在需要与自定义逻辑组合的情况下，cache.reset() 需要在 buildStart 阶段被调用，以便构建的 watch 模式在这种情况下正常工作。</p>
 <h2 id="部署静态站点" tabindex="-1"><a class="header-anchor" href="#部署静态站点" aria-hidden="true">#</a> 部署静态站点</h2>
 </template>

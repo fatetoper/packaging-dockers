@@ -416,7 +416,79 @@ import.meta.env 中的任何属性都可以通过特殊的 %ENV_NAME% 语法在 
 
 ## 构建生产版本
 
+当需要将应用部署到生产环境时，只需运行 vite build 命令。默认情况下，它使用 `<root>/index.html` 作为其构建入口点，并生成能够静态部署的应用程序包。
 
+### 浏览器兼容性
+
+**vite需求的浏览器环境相对较新，因此存在潜在的兼容问题的。**  
+默认情况下，Vite 的目标是能够 支持 `原生 ESM script 标签`、支持 `原生 ESM 动态导入` 和 `import.meta` 的浏览器：
+
+- `Chrome >=87 (2020年底发布)`
+- `Firefox >=78 (2020年中发布)`
+- `Safari >=14 (2020年下半年发布)`
+- `Edge >=88 (2021年初发布)`
+
+你也可以通过 [`build.target` 配置项](https://cn.vitejs.dev/config/build-options.html#build-target) 指定构建目标，最低支持 `es2015`。
+
+传统浏览器可以通过插件 `@vitejs/plugin-legacy` 来支持，它将自动生成传统版本的 chunk 及与其相对应 ES 语言特性方面的 polyfill。兼容版的 chunk 只会在不支持原生 ESM 的浏览器中进行按需加载。
+
+默认情况下 Vite 只处理语法转译，且 默认不包含任何 polyfill。 要用 polyfill 需要在 plugin-legacy 插件中进行配置。
+
+### 公共基础路径
+
+如果部署项目时需要指定具体的公共路径，只需指定 base 配置项，然后所有资源的路径都将据此配置重写。  
+这个选项也可以通过命令行参数指定，例如 vite build --base=/my/public/path/。
+
+### 多页面应用模式
+
+假设你有下面这样的项目文件结构
+
+```text
+├── package.json
+├── vite.config.js
+├── index.html
+├── main.js
+└── nested
+    ├── index.html
+    └── nested.js
+```
+
+在开发过程中，简单地导航或链接到 /nested/ - 将会按预期工作，与正常的静态文件服务器表现一致。
+
+在构建过程中，你只需指定多个 .html 文件作为入口点即可：
+
+```js
+// vite.config.js
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        nested: resolve(__dirname, 'nested/index.html'),
+      },
+    },
+  },
+})
+```
+
+如果你指定了另一个根目录，请记住，在解析输入路径时，__dirname 的值将仍然是 vite.config.js 文件所在的目录。因此，你需要把对应入口文件的 root 的路径添加到 resolve 的参数中。
+
+### 产物分块策略
+
+你可以通过配置 build.rollupOptions.output.manualChunks 来自定义 chunk 分割策略（查看 Rollup 相应文档）。在 Vite 2.8 及更早版本中，默认的策略是将 chunk 分割为 index 和 vendor。这对一些 SPA 来说是好的策略，但是要对所有应用场景提供一种通用解决方案是非常困难的。从 Vite 2.9 起，manualChunks 默认情况下不再被更改。你可以通过在配置文件中添加 splitVendorChunkPlugin 来继续使用 “分割 Vendor Chunk” 策略：
+
+```js
+// vite.config.js
+import { splitVendorChunkPlugin } from 'vite'
+export default defineConfig({
+  plugins: [splitVendorChunkPlugin()],
+})
+```
+
+也可以用一个工厂函数 splitVendorChunk({ cache: SplitVendorChunkCache }) 来提供该策略，在需要与自定义逻辑组合的情况下，cache.reset() 需要在 buildStart 阶段被调用，以便构建的 watch 模式在这种情况下正常工作。
 
 ## 部署静态站点
 
