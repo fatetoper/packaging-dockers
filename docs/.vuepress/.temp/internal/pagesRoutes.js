@@ -16,7 +16,7 @@ const routeItems = [
   ["v-61413f94","/project/react-cli.html",{"title":"React 脚手架"},["/project/react-cli","/project/react-cli.md"]],
   ["v-c9bbfba2","/project/",{"title":"介绍"},["/project/index.html","/project/README.md"]],
   ["v-2a04a4a2","/project/summary.html",{"title":"总结"},["/project/summary","/project/summary.md"]],
-  ["v-04c1b7cf","/project/vue-cli.html",{"title":"Vue 脚手架"},["/project/vue-cli","/project/vue-cli.md"]],
+  ["v-4eb2437c","/project/vue.html",{"title":"Vue 脚手架"},["/project/vue","/project/vue.md"]],
   ["v-7964f787","/senior/enhanceExperience.html",{"title":"提升开发体验"},["/senior/enhanceExperience","/senior/enhanceExperience.md"]],
   ["v-7b858f23","/senior/liftingSpeed.html",{"title":"提升打包构建速度"},["/senior/liftingSpeed","/senior/liftingSpeed.md"]],
   ["v-5489448c","/senior/optimizePerformance.html",{"title":"优化代码运行性能"},["/senior/optimizePerformance","/senior/optimizePerformance.md"]],
@@ -40,6 +40,7 @@ const routeItems = [
   ["v-794950e4","/base/backup/server.html",{"title":"开发服务器&自动化"},["/base/backup/server","/base/backup/server.md"]],
   ["v-5078804a","/base/backup/summary.html",{"title":"总结"},["/base/backup/summary","/base/backup/summary.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
+  ["v-04c1b7cf","/project/vue-cli.html",{"title":"Vue-cli"},["/project/vue-cli","/project/vue-cli.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(

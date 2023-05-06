@@ -147,6 +147,49 @@ export const data = {
           "children": []
         }
       ]
+    },
+    {
+      "level": 2,
+      "title": "环境变量与模式",
+      "slug": "环境变量与模式",
+      "children": [
+        {
+          "level": 3,
+          "title": "环境变量",
+          "slug": "环境变量",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "模式",
+          "slug": "模式",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": ".env 文件种类",
+          "slug": "env-文件种类",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "HTML 环境变量替换",
+          "slug": "html-环境变量替换",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "构建生产版本",
+      "slug": "构建生产版本",
+      "children": []
+    },
+    {
+      "level": 2,
+      "title": "部署静态站点",
+      "slug": "部署静态站点",
+      "children": []
     }
   ],
   "git": {
@@ -154,7 +197,7 @@ export const data = {
       {
         "name": "fatetoper",
         "email": "fan2840tao@163.com",
-        "commits": 2
+        "commits": 3
       }
     ]
   },

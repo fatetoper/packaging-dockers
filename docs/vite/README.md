@@ -273,4 +273,150 @@ Vite 也支持多个 .html 作入口点的 多页面应用模式。
 > vite.config.js
 
 ```json
+
+import { defineConfig, loadEnv } from 'vite';
+// defineConfig是一个工具函数，不用 jsdoc 注解也可以获取类型提示
+// 加载环境变量（loadEnv）,loadEnv接收三个参数
+// 第一个是.env后面的名字，第二个是绝对路径，第三个参数是你环境变量名的前缀，在vite中默认是VITE_。比如loadEnv(‘abc’, process.cwd(), 'ENV');
+
+//引入vite扩展插件
+import path from 'path';
+import vue from '@vitejs/plugin-vue';
+const resolve = (dir) => path.resolve(__dirname, dir);
+
+export default defineConfig(({ command, mode }) => {
+  const envParams = loadEnv(mode, __dirname);//__dirname表示当前文件所处目录
+  return {
+    root: resolve('./src'), //  入口index.html，注意入口js应该与index.html 同一目录下（只能写到目录，不能写到具体文件）
+    base: './',
+    publicDir: resolve('static'), //静态资源文件夹
+    resolve: {
+      alias: {
+        '@': resolve('src'), //作为 entries 的选项
+      },
+      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.vue'], // 默认选项中没有 .vue
+    },
+    // 反向代理
+    server: {
+      host: '0.0.0.0', //服务器ip地址
+      port: 5566, //本地端口
+      fs: {
+        strict: false, //  支持引用除入口目录的文件
+      },
+      // open: true, // 是否自动在浏览器打开
+      proxy: {
+        '/api': {
+          target: 'https://api.test.com/',
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+      },
+    },
+    plugins: [
+      vue(),
+    ],
+    build: {
+      //打包环境移除console.log，debugger
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+      //打包文件按照类型分文件夹显示
+      rollupOptions: {
+        input: {
+          login: resolve(__dirname, 'src/login_deployment.html'),
+          main: path.resolve(__dirname, 'src/index.html'),
+        },
+        output: {
+          chunkFileNames: 'js/[name]-[hash].js',
+          entryFileNames: 'js/[name]-[hash].js',
+        },
+      },
+    },
+  };
+});
+
 ```
+
+## 环境变量与模式
+
+### 环境变量
+
+Vite会把环境变量暴露在一个特殊的对象 `import.meta.env` 上。
+
+- 这个里有几个默认的内建变量：
+
+```javascript
+import.meta.env.MODE: {string}  应用运行的模式。
+
+import.meta.env.BASE_URL: {string}  部署应用时的基本 URL。他由base 配置项决定。
+
+import.meta.env.PROD: {boolean}  应用是否运行在生产环境。
+
+import.meta.env.DEV: {boolean}  应用是否运行在开发环境 (永远与 import.meta.env.PROD相反)。
+
+import.meta.env.SSR: {boolean}  应用是否运行在 server 上。
+```
+
+- 其他变量可以通过 `.env` 文件进行声明, 但是声明的变量必须以 `VITE_` 开头
+
+```.env
+VITE_DEV_TEST=localhost
+```
+
+### 模式
+
+默认情况下，开发服务器 (dev 命令) 运行在 development (开发) 模式，而 build 命令则运行在 production (生产) 模式。
+import.meta.env.MODE的值分别为 `development` 和 `production`, 可以根据不同的值进行动态的配置。
+
+- 运行 `vite dev` 时, vite 自动加载 `.env.development` 中的变量
+
+- 运行 `vite build` 时, vite 自动加载 `.env.production` 中的变量
+
+### .env 文件种类
+
+- 环境目录（默认是项目根目录）中的下列文件加载额外的环境变量：
+
+```text
+.env                # 所有情况下都会加载
+.env.local          # 所有情况下都会加载，但会被 git 忽略
+.env.[mode]         # 只在指定模式下加载
+.env.[mode].local   # 只在指定模式下加载，但会被 git 忽略
+```
+
+**环境加载优先级**
+
+1. Vite 执行时设置的环境变量有最高的优先级。例如:
+
+```bash
+VITE_SOME_KEY=123 vite build
+```
+
+2. 用于指定模式的文件（例如 .env.production）
+3. 通用配置（例如 .env）。
+
+**tips:**
+
+> .env 类文件会在 Vite 启动一开始时被加载，而改动会在重启服务器后生效。
+
+### HTML 环境变量替换
+
+import.meta.env 中的任何属性都可以通过特殊的 %ENV_NAME% 语法在 HTML 文件中使用：
+
+```html
+<h1>Vite is running in %MODE%</h1>
+<p>Using data from %VITE_API_URL%</p>
+```
+
+如果环境变量在 import.meta.env 中不存在，比如不存在的 %NON_EXISTENT%，则会将被忽略而不被替换，这与 JS 中的 import.meta.env.NON_EXISTENT 不同，JS 中会被替换为 undefined。
+
+## 构建生产版本
+
+
+
+## 部署静态站点
+

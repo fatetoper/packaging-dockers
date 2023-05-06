@@ -900,7 +900,7 @@ export const searchIndex = [
         "children": []
       }
     ],
-    "path": "/project/vue-cli.html",
+    "path": "/project/vue.html",
     "pathLocale": "/",
     "extraFields": []
   },
@@ -1313,6 +1313,12 @@ export const searchIndex = [
             "title": "现实问题",
             "slug": "现实问题",
             "children": []
+          },
+          {
+            "level": 3,
+            "title": "vite快的原理",
+            "slug": "vite快的原理",
+            "children": []
           }
         ]
       },
@@ -1438,6 +1444,49 @@ export const searchIndex = [
             "children": []
           }
         ]
+      },
+      {
+        "level": 2,
+        "title": "环境变量与模式",
+        "slug": "环境变量与模式",
+        "children": [
+          {
+            "level": 3,
+            "title": "环境变量",
+            "slug": "环境变量",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "模式",
+            "slug": "模式",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": ".env 文件种类",
+            "slug": "env-文件种类",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "HTML 环境变量替换",
+            "slug": "html-环境变量替换",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "构建生产版本",
+        "slug": "构建生产版本",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "部署静态站点",
+        "slug": "部署静态站点",
+        "children": []
       }
     ],
     "path": "/vite/",

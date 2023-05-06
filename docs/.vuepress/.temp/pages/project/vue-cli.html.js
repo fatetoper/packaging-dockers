@@ -1,7 +1,7 @@
 export const data = {
   "key": "v-04c1b7cf",
   "path": "/project/vue-cli.html",
-  "title": "Vue 脚手架",
+  "title": "Vue-cli",
   "lang": "zh-CN",
   "frontmatter": {},
   "excerpt": "",

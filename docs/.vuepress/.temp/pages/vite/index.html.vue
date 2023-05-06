@@ -180,4 +180,129 @@ Vite 也支持多个 .html 作入口点的 多页面应用模式。</li>
 <blockquote>
 <p>vite.config.js</p>
 </blockquote>
-<div class="language-json ext-json line-numbers-mode"><pre v-pre class="language-json"><code></code></pre><div class="line-numbers" aria-hidden="true"></div></div></template>
+<div class="language-json ext-json line-numbers-mode"><pre v-pre class="language-json"><code>
+import <span class="token punctuation">{</span> defineConfig<span class="token punctuation">,</span> loadEnv <span class="token punctuation">}</span> from 'vite';
+<span class="token comment">// defineConfig是一个工具函数，不用 jsdoc 注解也可以获取类型提示</span>
+<span class="token comment">// 加载环境变量（loadEnv）,loadEnv接收三个参数</span>
+<span class="token comment">// 第一个是.env后面的名字，第二个是绝对路径，第三个参数是你环境变量名的前缀，在vite中默认是VITE_。比如loadEnv(‘abc’, process.cwd(), 'ENV');</span>
+
+<span class="token comment">//引入vite扩展插件</span>
+import path from 'path';
+import vue from '@vitejs/plugin-vue';
+const resolve = (dir) => path.resolve(__dirname<span class="token punctuation">,</span> dir);
+
+export default defineConfig((<span class="token punctuation">{</span> command<span class="token punctuation">,</span> mode <span class="token punctuation">}</span>) => <span class="token punctuation">{</span>
+  const envParams = loadEnv(mode<span class="token punctuation">,</span> __dirname);<span class="token comment">//__dirname表示当前文件所处目录</span>
+  return <span class="token punctuation">{</span>
+    root<span class="token operator">:</span> resolve('./src')<span class="token punctuation">,</span> <span class="token comment">//  入口index.html，注意入口js应该与index.html 同一目录下（只能写到目录，不能写到具体文件）</span>
+    base<span class="token operator">:</span> './'<span class="token punctuation">,</span>
+    publicDir<span class="token operator">:</span> resolve('static')<span class="token punctuation">,</span> <span class="token comment">//静态资源文件夹</span>
+    resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+      alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+        '@'<span class="token operator">:</span> resolve('src')<span class="token punctuation">,</span> <span class="token comment">//作为 entries 的选项</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      extensions<span class="token operator">:</span> <span class="token punctuation">[</span>'.mjs'<span class="token punctuation">,</span> '.js'<span class="token punctuation">,</span> '.mts'<span class="token punctuation">,</span> '.ts'<span class="token punctuation">,</span> '.jsx'<span class="token punctuation">,</span> '.tsx'<span class="token punctuation">,</span> '.json'<span class="token punctuation">,</span> '.vue'<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 默认选项中没有 .vue</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 反向代理</span>
+    server<span class="token operator">:</span> <span class="token punctuation">{</span>
+      host<span class="token operator">:</span> '<span class="token number">0.0</span>.<span class="token number">0.0</span>'<span class="token punctuation">,</span> <span class="token comment">//服务器ip地址</span>
+      port<span class="token operator">:</span> <span class="token number">5566</span><span class="token punctuation">,</span> <span class="token comment">//本地端口</span>
+      fs<span class="token operator">:</span> <span class="token punctuation">{</span>
+        strict<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//  支持引用除入口目录的文件</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// open: true, // 是否自动在浏览器打开</span>
+      proxy<span class="token operator">:</span> <span class="token punctuation">{</span>
+        '/api'<span class="token operator">:</span> <span class="token punctuation">{</span>
+          target<span class="token operator">:</span> 'https<span class="token operator">:</span><span class="token comment">//api.test.com/',</span>
+          changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          ws<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          rewrite<span class="token operator">:</span> (path) => path.replace(/^\/api/<span class="token punctuation">,</span> '')<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+      vue()<span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    build<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">//打包环境移除console.log，debugger</span>
+      minify<span class="token operator">:</span> 'terser'<span class="token punctuation">,</span>
+      terserOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+        compress<span class="token operator">:</span> <span class="token punctuation">{</span>
+          drop_console<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          drop_debugger<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">//打包文件按照类型分文件夹显示</span>
+      rollupOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+        input<span class="token operator">:</span> <span class="token punctuation">{</span>
+          login<span class="token operator">:</span> resolve(__dirname<span class="token punctuation">,</span> 'src/login_deployment.html')<span class="token punctuation">,</span>
+          main<span class="token operator">:</span> path.resolve(__dirname<span class="token punctuation">,</span> 'src/index.html')<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        output<span class="token operator">:</span> <span class="token punctuation">{</span>
+          chunkFileNames<span class="token operator">:</span> 'js/<span class="token punctuation">[</span>name<span class="token punctuation">]</span>-<span class="token punctuation">[</span>hash<span class="token punctuation">]</span>.js'<span class="token punctuation">,</span>
+          entryFileNames<span class="token operator">:</span> 'js/<span class="token punctuation">[</span>name<span class="token punctuation">]</span>-<span class="token punctuation">[</span>hash<span class="token punctuation">]</span>.js'<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>;
+<span class="token punctuation">}</span>);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div><h2 id="环境变量与模式" tabindex="-1"><a class="header-anchor" href="#环境变量与模式" aria-hidden="true">#</a> 环境变量与模式</h2>
+<h3 id="环境变量" tabindex="-1"><a class="header-anchor" href="#环境变量" aria-hidden="true">#</a> 环境变量</h3>
+<p>Vite会把环境变量暴露在一个特殊的对象 <code>import.meta.env</code> 上。</p>
+<ul>
+<li>这个里有几个默认的内建变量：</li>
+</ul>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">MODE</span><span class="token operator">:</span> <span class="token punctuation">{</span>string<span class="token punctuation">}</span>  应用运行的模式。
+
+<span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">BASE_URL</span><span class="token operator">:</span> <span class="token punctuation">{</span>string<span class="token punctuation">}</span>  部署应用时的基本 <span class="token constant">URL</span>。他由base 配置项决定。
+
+<span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PROD</span><span class="token operator">:</span> <span class="token punctuation">{</span>boolean<span class="token punctuation">}</span>  应用是否运行在生产环境。
+
+<span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DEV</span><span class="token operator">:</span> <span class="token punctuation">{</span>boolean<span class="token punctuation">}</span>  <span class="token function">应用是否运行在开发环境</span> <span class="token punctuation">(</span>永远与 <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PROD</span>相反<span class="token punctuation">)</span>。
+
+<span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">SSR</span><span class="token operator">:</span> <span class="token punctuation">{</span>boolean<span class="token punctuation">}</span>  应用是否运行在 server 上。
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul>
+<li>其他变量可以通过 <code>.env</code> 文件进行声明, 但是声明的变量必须以 <code>VITE_</code> 开头</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>VITE_DEV_TEST=localhost
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><h3 id="模式" tabindex="-1"><a class="header-anchor" href="#模式" aria-hidden="true">#</a> 模式</h3>
+<p>默认情况下，开发服务器 (dev 命令) 运行在 development (开发) 模式，而 build 命令则运行在 production (生产) 模式。
+import.meta.env.MODE的值分别为 <code>development</code> 和 <code>production</code>, 可以根据不同的值进行动态的配置。</p>
+<ul>
+<li>
+<p>运行 <code>vite dev</code> 时, vite 自动加载 <code>.env.development</code> 中的变量</p>
+</li>
+<li>
+<p>运行 <code>vite build</code> 时, vite 自动加载 <code>.env.production</code> 中的变量</p>
+</li>
+</ul>
+<h3 id="env-文件种类" tabindex="-1"><a class="header-anchor" href="#env-文件种类" aria-hidden="true">#</a> .env 文件种类</h3>
+<ul>
+<li>环境目录（默认是项目根目录）中的下列文件加载额外的环境变量：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>.env                # 所有情况下都会加载
+.env.local          # 所有情况下都会加载，但会被 git 忽略
+.env.[mode]         # 只在指定模式下加载
+.env.[mode].local   # 只在指定模式下加载，但会被 git 忽略
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><strong>环境加载优先级</strong></p>
+<ol>
+<li>Vite 执行时设置的环境变量有最高的优先级。例如:</li>
+</ol>
+<div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token assign-left variable">VITE_SOME_KEY</span><span class="token operator">=</span><span class="token number">123</span> vite build
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><ol start="2">
+<li>用于指定模式的文件（例如 .env.production）</li>
+<li>通用配置（例如 .env）。</li>
+</ol>
+<p><strong>tips:</strong></p>
+<blockquote>
+<p>.env 类文件会在 Vite 启动一开始时被加载，而改动会在重启服务器后生效。</p>
+</blockquote>
+<h3 id="html-环境变量替换" tabindex="-1"><a class="header-anchor" href="#html-环境变量替换" aria-hidden="true">#</a> HTML 环境变量替换</h3>
+<p>import.meta.env 中的任何属性都可以通过特殊的 %ENV_NAME% 语法在 HTML 文件中使用：</p>
+<div class="language-html ext-html line-numbers-mode"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Vite is running in %MODE%<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Using data from %VITE_API_URL%<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>如果环境变量在 import.meta.env 中不存在，比如不存在的 %NON_EXISTENT%，则会将被忽略而不被替换，这与 JS 中的 import.meta.env.NON_EXISTENT 不同，JS 中会被替换为 undefined。</p>
+<h2 id="构建生产版本" tabindex="-1"><a class="header-anchor" href="#构建生产版本" aria-hidden="true">#</a> 构建生产版本</h2>
+<h2 id="部署静态站点" tabindex="-1"><a class="header-anchor" href="#部署静态站点" aria-hidden="true">#</a> 部署静态站点</h2>
+</template>

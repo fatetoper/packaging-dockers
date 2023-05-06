@@ -83,7 +83,13 @@ module.exports = {
       "/project/": [
         {
           text: "项目配置",
-          children: ["/project/README.md", "/project/react-cli.md", "/project/vue-cli.md", "/project/summary.md"],
+          children: [
+            "/project/README.md",
+            "/project/vue-cli.md",
+            "/project/react-cli.md", 
+            "/project/vue.md",
+            "/project/summary.md"
+          ],
         },
       ],
       "/origin/": [

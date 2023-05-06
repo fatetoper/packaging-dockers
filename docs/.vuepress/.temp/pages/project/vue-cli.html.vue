@@ -1,4 +1,4 @@
-<template><h1 id="vue-脚手架" tabindex="-1"><a class="header-anchor" href="#vue-脚手架" aria-hidden="true">#</a> Vue 脚手架</h1>
+<template><h1 id="vue-cli" tabindex="-1"><a class="header-anchor" href="#vue-cli" aria-hidden="true">#</a> Vue-cli</h1>
 <h2 id="开发模式配置" tabindex="-1"><a class="header-anchor" href="#开发模式配置" aria-hidden="true">#</a> 开发模式配置</h2>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">// webpack.dev.js</span>
 <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

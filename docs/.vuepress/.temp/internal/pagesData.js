@@ -29,8 +29,8 @@ export const pagesData = {
   "v-c9bbfba2": () => import(/* webpackChunkName: "v-c9bbfba2" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/project/index.html.js").then(({ data }) => data),
   // path: /project/summary.html
   "v-2a04a4a2": () => import(/* webpackChunkName: "v-2a04a4a2" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/project/summary.html.js").then(({ data }) => data),
-  // path: /project/vue-cli.html
-  "v-04c1b7cf": () => import(/* webpackChunkName: "v-04c1b7cf" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/project/vue-cli.html.js").then(({ data }) => data),
+  // path: /project/vue.html
+  "v-4eb2437c": () => import(/* webpackChunkName: "v-4eb2437c" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/project/vue.html.js").then(({ data }) => data),
   // path: /senior/enhanceExperience.html
   "v-7964f787": () => import(/* webpackChunkName: "v-7964f787" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/senior/enhanceExperience.html.js").then(({ data }) => data),
   // path: /senior/liftingSpeed.html
@@ -77,4 +77,6 @@ export const pagesData = {
   "v-5078804a": () => import(/* webpackChunkName: "v-5078804a" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/base/backup/summary.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
+  // path: /project/vue-cli.html
+  "v-04c1b7cf": () => import(/* webpackChunkName: "v-04c1b7cf" */"F:/code/packaging-dockers/docs/.vuepress/.temp/pages/project/vue-cli.html.js").then(({ data }) => data),
 }
