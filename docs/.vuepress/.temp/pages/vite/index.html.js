@@ -197,7 +197,7 @@ export const data = {
       {
         "name": "fatetoper",
         "email": "fan2840tao@163.com",
-        "commits": 3
+        "commits": 4
       }
     ]
   },
@@ -214,17 +214,4 @@ export const data = {
     "customClass": "your-customClass",
     "isIgnore": false
   }
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }
