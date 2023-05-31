@@ -1518,7 +1518,32 @@ export const searchIndex = [
         "level": 2,
         "title": "构建生产版本",
         "slug": "构建生产版本",
-        "children": []
+        "children": [
+          {
+            "level": 3,
+            "title": "浏览器兼容性",
+            "slug": "浏览器兼容性",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "公共基础路径",
+            "slug": "公共基础路径",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "多页面应用模式",
+            "slug": "多页面应用模式",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "产物分块策略",
+            "slug": "产物分块策略",
+            "children": []
+          }
+        ]
       },
       {
         "level": 2,
